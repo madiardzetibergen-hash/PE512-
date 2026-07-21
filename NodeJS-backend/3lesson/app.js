@@ -214,6 +214,53 @@ app.get("/books/:id", async(req,res) =>{
     }
 })
 
+app.post("/books", async (req, res) => {
+    const {
+        title,
+        author,
+        published_year = null,
+        genre = null,
+        is_read = false
+    } = req.body
+
+    // 1. Исправлен вызов .trim()
+    if (
+        typeof title !== "string" || title.trim() === "" ||
+        typeof author !== "string" || author.trim() === ""
+    ) {
+        return res.status(400).json({
+            success: false,
+            message: "Inputs title and author required"
+        })
+    }
+
+    try {
+        // 2. Убрана лишняя скобка перед VALUES
+        const result = await pool.query(
+            `
+                INSERT INTO books (title, author, published_year, genre, is_read)
+                VALUES ($1, $2, $3, $4, $5)
+                RETURNING *
+            `, 
+            [title.trim(), author.trim(), published_year, genre, is_read]
+        )
+
+        res.status(201).json({
+            success: true,
+            message: "Книга добавлена", 
+            data: result.rows[0]
+        })
+    }
+    catch (error) {
+        console.error(error)
+        // 3. Исправлено FinalizationRegistry -> false
+        res.status(500).json({
+            success: false,
+            message: "Не удалось добавить книгу"
+        })
+    }
+})
+
 app.listen(PORT, () => {
   console.log(`Сервер запущен: http://localhost:${PORT}`)
 })
