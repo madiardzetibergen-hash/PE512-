@@ -1,0 +1,94 @@
+body{
+    height: 20000px;
+}
+/* .text1{
+    color: green;
+}
+.text2{
+    color: red;
+}
+.text3{
+    color: blue;
+}
+#text4{
+    color: purple;
+}
+.box1{
+  background-color: gray;
+}
+.box2{
+    background-color: blue;
+}
+.box1 p{
+    color: purple;
+}
+.box1 .text{
+    color: black;
+}
+img{
+    width: 150px;
+    height:150px;
+}
+.container{
+    width: 600px;
+    height: 600px;
+    background-color: rgb(214, 214, 214);
+    padding: 20px;
+}
+.card1{
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    margin: 20px;
+}
+.card2{
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    margin: 20px;
+}
+
+.practice{
+    width: 200px;
+    height: 350px;
+    background-color: black;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    
+}
+.practice img{
+    width: 95px;
+    height: 100px;
+    border-radius: 25px;
+}
+.practice h1{
+    font-size: 22px;
+    color: white;
+    text-align: start;
+}
+.practice p{
+    color: white;
+    font-size: 14px;
+    text-align: justify;
+}
+.practice button{
+    padding: 8px 22px;
+    border-radius: 15px;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+} */
+.box{
+    width: 300px;
+    height: 300px;
+    background-color: coral;
+    position: sticky;
+    top: 200px;
+}
+.boxinside{
+    background-color: white;
+    width: 100px;
+    height: 100px;
+  
+}

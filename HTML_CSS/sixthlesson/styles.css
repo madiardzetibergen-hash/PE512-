@@ -1,0 +1,144 @@
+body {
+  background-image: url(https://wallpaperbat.com/img/8613602-free-90s-hd-wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  padding: 15px;
+  height: 100vh;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
+  width: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  border-radius: 25px;
+  opacity: 90%;
+  flex-wrap: wrap;
+}
+
+.leftside {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.logo {
+  font-size: 30px;
+}
+
+.links a {
+  text-decoration: none;
+  color: black;
+}
+
+.links {
+  display: flex;
+  gap: 15px;
+}
+
+.order button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-leftside {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-leftside img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.hero-leftside h1 {
+  font-size: 22px;
+  color: white;
+}
+
+.hero-leftside p {
+  font-size: 15px;
+  color: rgb(199, 199, 199);
+}
+
+.card {
+  width: 50%;
+  flex: 1 1 250px;
+}
+
+.cards img {
+  width: 100%;
+}
+
+.cards {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.top {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.bot {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.about {
+  color: black;
+}
+
+@media (max-width: 568px) {
+  .header {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  .leftside {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about .about-header {
+    font-size: 50px;
+  }
+  .links {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}/*# sourceMappingURL=styles.css.map */

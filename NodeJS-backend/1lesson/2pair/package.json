@@ -1,0 +1,13 @@
+{
+  "name": "nodejs-lesson-1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Первый урок по NodeJs"
+}

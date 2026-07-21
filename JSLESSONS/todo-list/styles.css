@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1e2f, #2b5876, #4e4376);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 550px;
+}
+
+.todo-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-size: 32px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #d9e4f5;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+#input {
+  flex: 1;
+  padding: 14px 16px;
+  border: none;
+  outline: none;
+  border-radius: 14px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #222;
+}
+
+#input::placeholder {
+  color: #777;
+}
+
+#addTaskBtn {
+  padding: 14px 18px;
+  border: none;
+  border-radius: 14px;
+  background: #00c896;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+#addTaskBtn:hover {
+  background: #00a97f;
+  transform: translateY(-1px);
+}
+
+#tasksList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 14px 16px;
+  border-radius: 16px;
+  transition: 0.2s ease;
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.task-text {
+  flex: 1;
+  font-size: 16px;
+  color: #222;
+  cursor: pointer;
+  word-break: break-word;
+}
+
+.task-actions {
+  margin-left: 12px;
+}
+
+.delete-btn {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #ff5c5c;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #e04848;
+}
+
+.done .task-text {
+  text-decoration: line-through;
+  color: #888;
+  opacity: 0.8;
+}
+
+.empty {
+  text-align: center;
+  color: #f3f3f3;
+  padding: 18px;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+}

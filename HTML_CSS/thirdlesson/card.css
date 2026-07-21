@@ -1,0 +1,36 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.card{
+    width: 700px;
+    height: 350px;
+    border-radius:25px;
+    display: flex;
+    background-color: black;
+}
+.header h1{
+    font-size: 16px;
+}
+.header p{
+    font-size: 10px;
+}
+.tooltip{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.tooltip p{
+    font-style: italic;
+}
+.stars{
+    display: flex;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}

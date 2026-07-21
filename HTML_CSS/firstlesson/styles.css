@@ -1,0 +1,39 @@
+img{
+    width: 300px;
+    height: 300px;
+    border-radius: 25px;
+}
+h1{
+    background-color: darkmagenta;
+    color: white;
+    width: 400px;
+    margin: 0 auto;
+}
+p{
+    background-color: darkseagreen;
+    color: white;
+    width: 1200px;
+    margin: 0 auto;
+}
+button{
+    padding: 15px 35px;
+    background-color: forestgreen;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+button:hover{
+    background-color:rgb(10, 53, 10) ;
+}
+a{
+    text-decoration: none;
+    font-size: 18px;
+    background-color: blue;
+    color: white;
+    margin: 30px;
+    padding: 10px 20px;
+}
+h2{
+    width: 300px;
+    margin: 0 auto;
+}

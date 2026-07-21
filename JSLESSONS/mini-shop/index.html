@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <h1>Mini Shop</h1>
+
+    <!-- Экран регистрации -->
+    <section id="registerScreen">
+        <h2>Регистрация</h2>
+
+        <form id="registerForm">
+
+            <div>
+                <label>Имя:</label>
+                <input type="text" id="registerName">
+            </div>
+
+            <div>
+                <label>Почта:</label>
+                <input type="text" id="registerEmail">
+            </div>
+
+            <div>
+                <label>Пароль:</label>
+                <input type="text" id="registerPassword">
+            </div>
+
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+        <p id="registerError"></p>
+        <button id="goToLoginBtn">У меня уже есть аккаунт</button>
+    </section>
+
+    <!-- Экран логина -->
+      <section id="loginScreen" hidden>
+        <h2>Логин</h2>
+
+        <form id="loginForm">
+
+            <div>
+                <label>Почта:</label>
+                <input type="text" id="loginEmail">
+            </div>
+
+            <div>
+                <label>Пароль:</label>
+                <input type="text" id="loginPassword">
+            </div>
+
+            <button type="submit">Войти</button>
+        </form>
+        <p id="loginError"></p>
+        <button id="goToRegisterBtn">Создать аккаунт</button>
+    </section>
+
+    <!-- Экран магазина -->
+     <section id="shopScreen" hidden>
+        <h2>Магазин</h2>
+
+        <p id="userInfo"></p>
+        <button id="logoutBtn">Выйти</button>
+
+        <h3>Товары</h3>
+        <div id="productList"></div>
+
+        <h3>Корзина</h3>
+        <div id="cartList"></div>
+
+        <p id="cartTotal"></p>
+     </section>
+
+
+    <script src="app.js"></script>
+</body>
+</html>

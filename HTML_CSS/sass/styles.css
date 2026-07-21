@@ -1,0 +1,26 @@
+.header {
+  background-color: black;
+  color: white;
+  flex: 20%;
+}
+
+.main {
+  background-color: rgba(207, 1, 207, 0.692);
+  color: white;
+  flex: 60%;
+}
+
+.footer {
+  background-color: rgba(49, 0, 194, 0.692);
+  color: white;
+  flex: 20%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 95vh;
+  padding: 10px;
+  gap: 15px;
+}/*# sourceMappingURL=styles.css.map */

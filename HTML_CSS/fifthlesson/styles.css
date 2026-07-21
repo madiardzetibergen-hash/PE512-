@@ -1,0 +1,29 @@
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+     'header header'
+     'main main'
+     'footer footer';
+}
+.header{
+    grid-area: header;
+    background-color: black;
+}
+.main{
+    grid-area: main;
+    background-color: crimson;
+    display: grid;
+    grid-template-areas: 'left right';
+    grid-template-columns: 70% 30%;
+}
+.left{
+    grid-area: left;
+}
+.right{
+    grid-area: right;
+}
+.footer{
+    grid-area: footer;
+    background-color: blue;
+}

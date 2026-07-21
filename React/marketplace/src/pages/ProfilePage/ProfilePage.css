@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+.profile_container {
+  min-height: 100vh;
+  padding: 110px 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 56, 92, 0.08), transparent 28%),
+    radial-gradient(circle at 90% 20%, rgba(0, 132, 137, 0.08), transparent 26%),
+    #fffaf7;
+
+  color: #222222;
+  font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.profile_card {
+  width: 100%;
+  max-width: 680px;
+  padding: 42px;
+  border-radius: 34px;
+
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(34, 34, 34, 0.08);
+  box-shadow: 0 24px 70px rgba(34, 34, 34, 0.12);
+
+  animation: profileFadeIn 0.35s ease;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.profile_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile_avatar {
+  width: 118px;
+  height: 118px;
+  margin-bottom: 22px;
+  border-radius: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #ff385c, #ff8a00);
+  color: #ffffff;
+
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+
+  box-shadow: 0 18px 38px rgba(255, 56, 92, 0.28);
+  overflow: hidden;
+}
+
+.profile_avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile_name {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: #222222;
+}
+
+.profile_username {
+  margin: 10px 0 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  background: #fff1f2;
+  color: #ff385c;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.profile_label {
+  margin: 14px 0 0;
+  color: #717171;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.profile_divider {
+  border: 0;
+  height: 1px;
+  margin: 34px 0;
+  background: rgba(34, 34, 34, 0.08);
+}
+
+.profile_info_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.info_box {
+  min-height: 120px;
+  padding: 22px;
+  border-radius: 26px;
+
+  background: #ffffff;
+  border: 1px solid rgba(34, 34, 34, 0.08);
+  box-shadow: 0 12px 34px rgba(34, 34, 34, 0.06);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+
+  transition: 0.25s ease;
+}
+
+.info_box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 48px rgba(34, 34, 34, 0.1);
+}
+
+.info_label {
+  color: #717171;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.info_value {
+  color: #222222;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.status_active {
+  color: #008a05;
+}
+
+.status_active::before {
+  content: "● ";
+  color: #00a310;
+}
+
+/* Skeleton loading */
+
+.skeleton_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skeleton_avatar {
+  width: 118px;
+  height: 118px;
+  border-radius: 36px;
+  margin-bottom: 22px;
+  background: #f2f2f2;
+}
+
+.skeleton_text {
+  border-radius: 999px;
+  background: #f2f2f2;
+  margin-bottom: 12px;
+}
+
+.skeleton_text.title {
+  width: 220px;
+  height: 34px;
+}
+
+.skeleton_text.subtitle {
+  width: 140px;
+  height: 22px;
+  margin-bottom: 34px;
+}
+
+.skeleton_info_box {
+  height: 120px;
+  border-radius: 26px;
+  background: #f2f2f2;
+}
+
+.skeleton_avatar,
+.skeleton_text,
+.skeleton_info_box {
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton_avatar::after,
+.skeleton_text::after,
+.skeleton_info_box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes profileFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 640px) {
+  .profile_container {
+    padding: 120px 16px 44px;
+    align-items: flex-start;
+  }
+
+  .profile_card {
+    padding: 28px 18px;
+    border-radius: 28px;
+  }
+
+  .profile_avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 30px;
+    font-size: 34px;
+  }
+
+  .profile_name {
+    font-size: 28px;
+  }
+
+  .profile_username {
+    font-size: 14px;
+  }
+
+  .profile_info_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info_box {
+    min-height: 104px;
+    padding: 20px;
+  }
+
+  .info_value {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,13 @@
+body{
+    display: flex;
+    height: 100vh;
+    gap: 20px;
+}
+.main{
+    flex: 80%;
+    background-color: black;
+}
+.sidebar{
+    flex: 20%;
+    background-color: blueviolet;
+}

@@ -1,0 +1,78 @@
+.products-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.products-page__top {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.products-page__top h1 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.products-grid .product-card {
+  max-width: none;
+  height: 100%;
+}
+
+.products-page > h2 {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+}
+
+/* Адаптив под планшеты */
+@media (max-width: 768px) {
+  .products-page {
+    padding: 28px 16px;
+  }
+
+  .products-page__top {
+    margin-bottom: 24px;
+  }
+
+  .products-page__top h1 {
+    font-size: 30px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 18px;
+  }
+}
+
+/* Адаптив под телефоны */
+@media (max-width: 480px) {
+  .products-page {
+    padding: 20px 14px;
+  }
+
+  .products-page__top h1 {
+    font-size: 26px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

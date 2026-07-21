@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+}
+
+.container {
+    width: 400px;
+    padding: 30px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.task-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.task-input input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: 0.3s;
+}
+
+.task-input input:focus {
+    border-color: #c33764;
+    box-shadow: 0 0 5px rgba(195,55,100,0.5);
+}
+
+.task-input button {
+    padding: 12px 15px;
+    border: none;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.task-input button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.messages {
+    margin-bottom: 10px;
+}
+
+.success {
+    color: green;
+    font-size: 14px;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+.task-list {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    background: #f7f7f7;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.task-list li:hover {
+    background: #ececec;
+}
+
+.delete {
+    border: none;
+    background: crimson;
+    color: white;
+    border-radius: 6px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.delete:hover {
+    background: darkred;
+}
