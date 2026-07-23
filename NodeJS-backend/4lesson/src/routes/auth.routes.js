@@ -1,7 +1,8 @@
 const express = require("express")
 const bcrypt = require("bcrypt")
+const {authMiddleware} = require("../middleware/auth.middleware")
+const jwt = require("jsonwebtoken")
 const pool = require("../db")
-
 const router = express.Router()
 
 function isValidEmail(email) {
@@ -87,5 +88,80 @@ router.post("/register", async (req, res) => {
         })
     }
 })
+
+router.post("/login", async(req,res) =>{
+    try{
+        const {email,password} = req.body
+        
+        if(typeof email !== "string" || typeof password !== "string"){
+            return res.status(400).json({
+                message: "Email и пароль обязательны"
+            })
+        }
+
+        const normalizedEmail = email.trim().toLowerCase()
+
+        const userResult = await pool.query(
+            `
+                SELECT
+                id,
+                name,
+                email,
+                password_hash,
+                role,
+                created_at
+                FROM users 
+                WHERE email = $1
+            `, [normalizedEmail])
+
+        if(userResult.rows.length === 0){
+            return res.status(401).json({
+                message: "Неверный email или пароль"
+            })
+        }
+        const user = userResult.rows[0]
+
+        const isPasswordCorrect = await bcrypt.compare(
+            password,
+            user.password_hash
+        )
+
+        if(!isPasswordCorrect){
+            return res.status(401).json({
+                message: "Неверный email или пароль"
+            })
+        }
+
+        const token = jwt.sign(
+        {
+            userId: user.id,
+            role: user.role
+        },
+        process.env.JWT_SECRET,{
+            algorithm: "HS256",
+            expiresIn: process.env.JWT_EXPIRES_IN || "1h"
+        }
+    )
+    return res.status(200).json({
+        message: "Вход выполнен успешно",
+        token,
+        user:{
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            role: user.role,
+            created_at: user.created_at
+        }
+    })
+
+    }
+    catch(error){
+        console.error("Ошибка входа", error)
+        return res.status(500).json({
+            message:"Внутренняя ошибка сервера"
+        })
+    }
+})
+
 
 module.exports = router;
