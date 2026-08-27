@@ -1,5 +1,17 @@
 package main
-import "fmt"
+
+import (
+	"errors"
+	"fmt"
+)
+
+// func divide(a float64, b float64)(float64,error){
+// 	if b == 0{
+// 		return 0,
+// 		errors.New("нельзя делить на ноль")
+// 	}
+// 	return a / b, nil
+// }
 
 func main(){
 	// var name string = "Qwerty"
@@ -83,12 +95,12 @@ func main(){
 
 	// struct = структура, которая обьединяет связанные поля в один тип.
 
-	type User struct{
-		Name string
-		Age int
-		Email string
-		Active bool
-	}
+	// type User struct{
+	// 	Name string
+	// 	Age int
+	// 	Email string
+	// 	Active bool
+	// }
 
 	// user := User{
 	// 	Name: "Alex",
@@ -102,24 +114,38 @@ func main(){
 
 	// Slice структур
 
-	users := []User{
-		{
-			Name: "Alex",
-			Age: 20,
-			Email: "alex@gmail.com",
-			Active: true,
-		},
+	// users := []User{
+	// 	{
+	// 		Name: "Alex",
+	// 		Age: 20,
+	// 		Email: "alex@gmail.com",
+	// 		Active: true,
+	// 	},
 
-		{
-			Name: "John",
-			Age: 21,
-			Email: "john@gmail.com",
-			Active: true,
-		},
-	}
+	// 	{
+	// 		Name: "John",
+	// 		Age: 21,
+	// 		Email: "john@gmail.com",
+	// 		Active: true,
+	// 	},
+	// }
 
 	// struct -> класс
 	// methods -> методы
 	// interfaces -> интерфейсы
 	// композиция -> наследование
+
+	// result, err := someFunction()
+
+	// if err != nil{
+	// 	fmt.Println("Ошибка", err)
+	// 	return
+	// }
+
+	// result,err := divide(10,0)
+
+	// if err != nil{
+	// 	fmt.Println("Ошибка", err)
+	// }
+	// fmt.Println(result)
 }
