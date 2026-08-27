@@ -46,17 +46,80 @@ func main(){
 	// names = append(names,"Choo")
 	// fmt.Println(names)
 
-	numbers := []int{10,20,30,40,50}
-	part := numbers[1:4]
-	fmt.Println(numbers)
-	fmt.Println(part)
+	// numbers := []int{10,20,30,40,50}
+	// part := numbers[1:4]
+	// fmt.Println(numbers)
+	// fmt.Println(part)
 
 	// make создает некоторые встроенные структуры GO,
 	// наример slice,map и channel
 
-	users := make([]string, 0)
+	// users := make([]string, 0)
 
 	// len -> сколько элементов сейчас доступно
 	// capacity -> сколько элементов может вместить без расширения
 
+	// MAP
+
+	// user := map[string]string{
+	// 	"name": "Alex",
+	// 	"city": "New-York",
+	// }
+
+	// ages := map[string]int{
+	// 	"Alex": 20,
+	// 	"John": 25,
+	// 	"Emma": 30,
+	// }
+	// // fmt.Println(ages["Alex"])
+	// // fmt.Println(ages)
+	// ages["Qwerty"] = 19
+	// ages["Alex"] = 21
+	// delete(ages, "John")
+
+	// for key,value := range ages{
+	// 	fmt.Println(key,value)
+	// }
+
+	// struct = структура, которая обьединяет связанные поля в один тип.
+
+	type User struct{
+		Name string
+		Age int
+		Email string
+		Active bool
+	}
+
+	// user := User{
+	// 	Name: "Alex",
+	// 	Age: 20,
+	// 	Email: "alex@gmail.com",
+	// 	Active: true,
+	// }
+
+	// fmt.Println(user.Name)
+	// fmt.Println(user.Age)
+
+	// Slice структур
+
+	users := []User{
+		{
+			Name: "Alex",
+			Age: 20,
+			Email: "alex@gmail.com",
+			Active: true,
+		},
+
+		{
+			Name: "John",
+			Age: 21,
+			Email: "john@gmail.com",
+			Active: true,
+		},
+	}
+
+	// struct -> класс
+	// methods -> методы
+	// interfaces -> интерфейсы
+	// композиция -> наследование
 }
