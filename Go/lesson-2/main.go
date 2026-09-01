@@ -1,8 +1,10 @@
 package main
 
 import (
-	"errors"
+	// "errors"
 	"fmt"
+	// "net"
+	"net/http"
 )
 
 // func divide(a float64, b float64)(float64,error){
@@ -12,6 +14,10 @@ import (
 // 	}
 // 	return a / b, nil
 // }
+
+	func homeHandler(w http.ResponseWriter, r *http.Request){
+		fmt.Fprintln(w, "Hello from Go server")
+	}
 
 func main(){
 	// var name string = "Qwerty"
@@ -95,12 +101,12 @@ func main(){
 
 	// struct = структура, которая обьединяет связанные поля в один тип.
 
-	// type User struct{
-	// 	Name string
-	// 	Age int
-	// 	Email string
-	// 	Active bool
-	// }
+	type User struct{
+		Name string
+		Age int
+		Email string
+		Active bool
+	}
 
 	// user := User{
 	// 	Name: "Alex",
@@ -148,4 +154,37 @@ func main(){
 	// 	fmt.Println("Ошибка", err)
 	// }
 	// fmt.Println(result)
+
+	// net.Listen("tcp", ":8080")
+
+	// net.Listen("tcp", "localhost:8080")
+
+	// принимать http request
+	// разбирать method
+	// разбирать url
+	// читать headers
+	// читать body
+	// отправлять http response
+	// запускать http-server
+	// делать httl-client запросы
+
+	// TCP bytes
+
+	// GET
+	// POST
+	// JSON
+	// status
+	// headers
+	// body
+
+
+	http.HandleFunc("/", homeHandler)
+	fmt.Println("Server started on http://localhost:8080")
+
+	err := http.ListenAndServe(":8080", nil)
+
+	if err != nil{
+		fmt.Println("Server error", err)
+	}
+
 }
