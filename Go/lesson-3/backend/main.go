@@ -48,7 +48,7 @@ func getUserByID(w http.ResponseWriter, r *http.Request){
 
 type UserInput struct {
 	Name string `json:"name"`
-	Age int `json:"age`
+	Age int `json:"age"`
 }
 // Создание пользователя
 func createUser(w http.ResponseWriter, r *http.Request){
@@ -154,3 +154,7 @@ func main(){
 		fmt.Println("Server error", err)
 	}
 }
+
+// 1. Реализовать методы PUT/PATCH, настроить маршрут
+// 2. Реализовать метод DELETE, настроить маршрут
+// 3. Дописать фронт для новых маршрутов
