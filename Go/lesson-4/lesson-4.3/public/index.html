@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go WebSocket Chat</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f9; display: flex; justify-content: center; padding-top: 30px; }
+        .chat-container { width: 400px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        #chat-box { height: 300px; border: 1px solid #ccc; overflow-y: scroll; padding: 10px; margin-bottom: 10px; border-radius: 4px; background: #fafafa; }
+        .input-group { display: flex; gap: 5px; }
+        input[type="text"] { flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 8px 15px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #218838; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <h2>Go WebSocket Чат</h2>
+
+    <!-- Форма входа -->
+    <div id="login-screen">
+        <input type="text" id="username-input" placeholder="Введите ваше имя...">
+        <button onclick="connect()">Войти</button>
+    </div>
+
+    <!-- Окно чата -->
+    <div id="chat-screen" class="hidden">
+        <div id="chat-box"></div>
+        <div class="input-group">
+            <input type="text" id="message-input" placeholder="Сообщение..." onkeydown="if(event.key==='Enter') sendMessage()">
+            <button onclick="sendMessage()">Отправить</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let ws;
+
+    function connect() {
+        const username = document.getElementById('username-input').value.trim();
+        if (!username) return alert("Введите имя!");
+
+        // Подключаемся к WebSocket серверу Go
+        ws = new WebSocket("ws://" + window.location.host + "/ws");
+
+        ws.onopen = () => {
+            // Первое сообщение — имя пользователя
+            ws.send(username);
+            
+            document.getElementById('login-screen').classList.add('hidden');
+            document.getElementById('chat-screen').classList.remove('hidden');
+        };
+
+        ws.onmessage = (event) => {
+            const chatBox = document.getElementById('chat-box');
+            const messageElement = document.createElement('div');
+            messageElement.textContent = event.data;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight; // Автоскролл вниз
+        };
+
+        ws.onclose = () => {
+            alert("Соединение с сервером закрыто");
+            location.reload();
+        };
+    }
+
+    function sendMessage() {
+        const input = document.getElementById('message-input');
+        const text = input.value.trim();
+        if (text && ws) {
+            ws.send(text);
+            input.value = '';
+        }
+    }
+</script>
+
+</body>
+</html>
